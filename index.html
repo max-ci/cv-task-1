@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Task 1</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/faker.min.js" defer="defer"></script>
+    <script src="js/main.js" defer="defer"></script>
+  </head>
+
+  <body>
+    <div class="info">
+      <button type="button" class="info__icon" aria-hidden="true">
+        <svg class="info__icon-svg" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z" />
+        </svg>
+      </button>
+
+      <div class="info__content">
+        <div class="info__content-inner">
+          <p class="info__text">You can add, remove and change content of the boxes on the right to see how component will behave when a user change something.</p>
+
+          <p class="info__text">The features boxes on the left are pushed a little bit to the top and the right ones to the bottom to keep ideal vertical alignment with the left side of the container.</p>
+
+          <p class="info__text">HTML markup is a little bit simpler using CSS Grid (here and there I don't have to use additional containers thanks to
+            <code>gap</code>
+            property, which exists also in CSS Flexbox but it's not super widely supported yet).
+          </p>
+
+          <p class="info__text">I could use the same HTML markup for CSS Flexbox without
+            <code>gap</code>
+            property, but CSS would be more complicated (e.g. width based on calc function and right margin every second box), not flexible enough for a component used by different people.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <div class="actions__inner">
+        <button type="button" class="actions__button actions__button--active btn-change-mode" data-mode="flexbox">CSS Flexbox</button>
+
+        <button type="button" class="actions__button btn-change-mode" data-mode="grid">CSS Grid</button>
+      </div>
+    </div>
+
+    <div class="actions">
+      <div class="actions__inner">
+        <button type="button" class="actions__button btn-add-block">Add block</button>
+
+        <button type="button" class="actions__button btn-remove-block">Remove block</button>
+
+        <button type="button" class="actions__button btn-randomize-content">Randomize content</button>
+      </div>
+    </div>
+
+    <section class="hero hero--active">
+      <div class="hero__container">
+        <div class="hero__inner">
+          <div class="hero__text">
+            <h2 class="hero__subheading" data-randomize>Lorem ipsum</h2>
+
+            <h1 class="hero__heading">
+              <span class="hero__heading-emphasized" data-randomize-short>Lorem ipsum</span>
+              dolor sit amet consectetur.
+            </h1>
+
+            <p class="hero__description" data-randomize>Suspendisse aliquam tellus ante, porttitor mattis diam eleifend quis. Pallentesque pulvinar commodo eros sit amet finibus. Aenean et ornare erat.</p>
+
+            <button type="button" class="hero__cta">CSS Flexbox</button>
+          </div>
+
+          <div class="hero__features">
+            <div class="hero__features-inner">
+              <div class="hero__feature">
+                <div class="hero__feature-inner">
+                  <div class="hero__feature-icon hero__feature-icon--1">
+                    <svg class="hero__feature-svg" viewbox="0 0 24 24" aria-hidden="true">
+                      <path d="M17 11V3H7v4H3v14h8v-4h2v4h8V11h-4zM7 19H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V9h2v2zm4 4H9v-2h2v2zm0-4H9V9h2v2zm0-4H9V5h2v2zm4 8h-2v-2h2v2zm0-4h-2V9h2v2zm0-4h-2V5h2v2zm4 12h-2v-2h2v2zm0-4h-2v-2h2v2z"/>
+                    </svg>
+                  </div>
+
+                  <h3 class="hero__feature-heading" data-randomize>Ut dui neque, volutpat ac erat quis, lobortis.</h3>
+
+                  <p class="hero__feature-text" data-randomize>In eget lugila ut est interdum finibus. Etiam consectetur, libero tincidunt vulputate fermentum.</p>
+                </div>
+              </div>
+
+              <div class="hero__feature">
+                <div class="hero__feature-inner">
+                  <div class="hero__feature-icon hero__feature-icon--2">
+                    <svg class="hero__feature-svg" viewbox="0 0 24 24" aria-hidden="true">
+                      <path d="M17 11V3H7v4H3v14h8v-4h2v4h8V11h-4zM7 19H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V9h2v2zm4 4H9v-2h2v2zm0-4H9V9h2v2zm0-4H9V5h2v2zm4 8h-2v-2h2v2zm0-4h-2V9h2v2zm0-4h-2V5h2v2zm4 12h-2v-2h2v2zm0-4h-2v-2h2v2z"/>
+                    </svg>
+                  </div>
+
+                  <h3 class="hero__feature-heading" data-randomize>Ut dui neque, volutpat ac erat quis, lobortis.</h3>
+
+                  <p class="hero__feature-text" data-randomize>In eget lugila ut est interdum finibus. Etiam consectetur, libero tincidunt vulputate fermentum.</p>
+                </div>
+              </div>
+
+              <div class="hero__feature">
+                <div class="hero__feature-inner">
+                  <div class="hero__feature-icon hero__feature-icon--3">
+                    <svg class="hero__feature-svg" viewbox="0 0 24 24" aria-hidden="true">
+                      <path d="M17 11V3H7v4H3v14h8v-4h2v4h8V11h-4zM7 19H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V9h2v2zm4 4H9v-2h2v2zm0-4H9V9h2v2zm0-4H9V5h2v2zm4 8h-2v-2h2v2zm0-4h-2V9h2v2zm0-4h-2V5h2v2zm4 12h-2v-2h2v2zm0-4h-2v-2h2v2z"/>
+                    </svg>
+                  </div>
+
+                  <h3 class="hero__feature-heading" data-randomize>Ut dui neque, volutpat ac erat quis, lobortis.</h3>
+
+                  <p class="hero__feature-text" data-randomize>In eget lugila ut est interdum finibus. Etiam consectetur, libero tincidunt vulputate fermentum.</p>
+                </div>
+              </div>
+
+              <div class="hero__feature">
+                <div class="hero__feature-inner">
+                  <div class="hero__feature-icon hero__feature-icon--4">
+                    <svg class="hero__feature-svg" viewbox="0 0 24 24" aria-hidden="true">
+                      <path d="M17 11V3H7v4H3v14h8v-4h2v4h8V11h-4zM7 19H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V9h2v2zm4 4H9v-2h2v2zm0-4H9V9h2v2zm0-4H9V5h2v2zm4 8h-2v-2h2v2zm0-4h-2V9h2v2zm0-4h-2V5h2v2zm4 12h-2v-2h2v2zm0-4h-2v-2h2v2z"/>
+                    </svg>
+                  </div>
+
+                  <h3 class="hero__feature-heading" data-randomize>Ut dui neque, volutpat ac erat quis, lobortis.</h3>
+
+                  <p class="hero__feature-text" data-randomize>In eget lugila ut est interdum finibus. Etiam consectetur, libero tincidunt vulputate fermentum.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero-grid" hidden="hidden">
+      <div class="hero-grid__container">
+        <div class="hero-grid__text">
+          <h2 class="hero-grid__subheading" data-randomize>Lorem ipsum</h2>
+
+          <h1 class="hero-grid__heading">
+            <span class="hero-grid__heading-emphasized" data-randomize-short>Lorem ipsum</span>
+            dolor sit amet consectetur.
+          </h1>
+
+          <p class="hero-grid__description" data-randomize>Suspendisse aliquam tellus ante, porttitor mattis diam eleifend quis. Pallentesque pulvinar commodo eros sit amet finibus. Aenean et ornare erat.</p>
+
+          <button type="button" class="hero-grid__cta">CSS Grid</button>
+        </div>
+
+        <div class="hero-grid__features">
+          <div class="hero-grid__feature">
+            <div class="hero-grid__feature-icon hero-grid__feature-icon--1">
+              <svg class="hero-grid__feature-svg" viewbox="0 0 24 24" aria-hidden="true">
+                <path d="M17 11V3H7v4H3v14h8v-4h2v4h8V11h-4zM7 19H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V9h2v2zm4 4H9v-2h2v2zm0-4H9V9h2v2zm0-4H9V5h2v2zm4 8h-2v-2h2v2zm0-4h-2V9h2v2zm0-4h-2V5h2v2zm4 12h-2v-2h2v2zm0-4h-2v-2h2v2z"/>
+              </svg>
+            </div>
+
+            <h3 class="hero-grid__feature-heading" data-randomize>Ut dui neque, volutpat ac erat quis, lobortis.</h3>
+
+            <p class="hero-grid__feature-text" data-randomize>In eget lugila ut est interdum finibus. Etiam consectetur, libero tincidunt vulputate fermentum.</p>
+          </div>
+
+          <div class="hero-grid__feature">
+            <div class="hero-grid__feature-icon hero-grid__feature-icon--2">
+              <svg class="hero-grid__feature-svg" viewbox="0 0 24 24" aria-hidden="true">
+                <path d="M17 11V3H7v4H3v14h8v-4h2v4h8V11h-4zM7 19H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V9h2v2zm4 4H9v-2h2v2zm0-4H9V9h2v2zm0-4H9V5h2v2zm4 8h-2v-2h2v2zm0-4h-2V9h2v2zm0-4h-2V5h2v2zm4 12h-2v-2h2v2zm0-4h-2v-2h2v2z"/>
+              </svg>
+            </div>
+
+            <h3 class="hero-grid__feature-heading" data-randomize>Ut dui neque, volutpat ac erat quis, lobortis.</h3>
+
+            <p class="hero-grid__feature-text" data-randomize>In eget lugila ut est interdum finibus. Etiam consectetur, libero tincidunt vulputate fermentum.</p>
+          </div>
+
+          <div class="hero-grid__feature">
+            <div class="hero-grid__feature-icon hero-grid__feature-icon--3">
+              <svg class="hero-grid__feature-svg" viewbox="0 0 24 24" aria-hidden="true">
+                <path d="M17 11V3H7v4H3v14h8v-4h2v4h8V11h-4zM7 19H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V9h2v2zm4 4H9v-2h2v2zm0-4H9V9h2v2zm0-4H9V5h2v2zm4 8h-2v-2h2v2zm0-4h-2V9h2v2zm0-4h-2V5h2v2zm4 12h-2v-2h2v2zm0-4h-2v-2h2v2z"/>
+              </svg>
+            </div>
+
+            <h3 class="hero-grid__feature-heading" data-randomize>Ut dui neque, volutpat ac erat quis, lobortis.</h3>
+
+            <p class="hero-grid__feature-text" data-randomize>In eget lugila ut est interdum finibus. Etiam consectetur, libero tincidunt vulputate fermentum.</p>
+          </div>
+
+          <div class="hero-grid__feature">
+            <div class="hero-grid__feature-icon hero-grid__feature-icon--4">
+              <svg class="hero-grid__feature-svg" viewbox="0 0 24 24" aria-hidden="true">
+                <path d="M17 11V3H7v4H3v14h8v-4h2v4h8V11h-4zM7 19H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V9h2v2zm4 4H9v-2h2v2zm0-4H9V9h2v2zm0-4H9V5h2v2zm4 8h-2v-2h2v2zm0-4h-2V9h2v2zm0-4h-2V5h2v2zm4 12h-2v-2h2v2zm0-4h-2v-2h2v2z"/>
+              </svg>
+            </div>
+
+            <h3 class="hero-grid__feature-heading" data-randomize>Ut dui neque, volutpat ac erat quis, lobortis.</h3>
+
+            <p class="hero-grid__feature-text" data-randomize>In eget lugila ut est interdum finibus. Etiam consectetur, libero tincidunt vulputate fermentum.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
