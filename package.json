@@ -1,0 +1,41 @@
+{
+  "name": "task-1",
+  "version": "1.0.0",
+  "description": "Task 1",
+  "main": "index.js",
+  "scripts": {
+    "browsersync": "browser-sync start --server dist/ --files \"dist/**/*\"",
+    "build": "npm-run-all clean --parallel scss copy",
+    "clean": "rimraf dist",
+    "copy": "npm-run-all copy-favicon copy-faker copy-html copy-js copy-normalize",
+    "copy-faker": "cpx node_modules/faker/dist/faker.min.js dist/js/",
+    "copy-favicon": "cpx favicon.ico dist/",
+    "copy-html": "cpx index.html dist/",
+    "copy-js": "cpx js/main.js dist/js/",
+    "copy-normalize": "cpx node_modules/normalize.css/normalize.css dist/css/",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "scss": "node-sass -o dist/css/ scss/style.scss",
+    "start": "npm-run-all clean --parallel scss copy --parallel browsersync watch",
+    "watch": "npm-run-all --parallel watch-html watch-js watch-scss",
+    "watch-html": "onchange index.html -- npm run copy-html",
+    "watch-js": "onchange js/main.js -- npm run copy-js",
+    "watch-scss": "onchange \"scss/**/*.scss\" -- npm run scss"
+  },
+  "author": "Maksymilian Czarnecki",
+  "license": "ISC",
+  "homepage": "https://max-ci.github.io/cv-task-1",
+  "devDependencies": {
+    "browser-sync": "^2.27.5",
+    "cpx": "^1.5.0",
+    "gh-pages": "^3.2.3",
+    "node-sass": "^6.0.1",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "faker": "^5.5.3",
+    "normalize.css": "^8.0.1"
+  }
+}

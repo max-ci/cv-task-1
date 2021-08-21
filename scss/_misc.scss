@@ -1,0 +1,159 @@
+.actions {
+  display: flex;
+  justify-content: center;
+  margin: pxToRem(20) pxToRem(15);
+
+  &__inner {
+    display: flex;
+    background-color: #e9eaf6;
+    padding: pxToRem(5);
+    border-radius: $border-radius;
+  }
+
+  &__button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: $color-primary;
+    padding: pxToRem(10);
+    border-radius: $border-radius;
+    font-size: pxToRem(14);
+    font-weight: 700;
+    user-select: none;
+    transition: color 0.2s ease, background-color 0.2s ease;
+
+    &:hover {
+      background-color: $color-primary;
+      color: #fff;
+    }
+
+    &:not(:last-child) {
+      margin-right: pxToRem(5);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+
+      &:hover {
+        background-color: transparent;
+        color: $color-primary;
+      }
+    }
+
+    &--active {
+      background-color: $color-primary;
+      color: #fff;
+    }
+  }
+}
+
+.actions {
+  &__button {
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: $color-primary;
+      color: #fff;
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  margin-top: pxToRem(20);
+  position: relative;
+  z-index: 1;
+
+  @media (min-width: $screen-sm) {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    left: auto;
+    margin-top: 0;
+  }
+
+  &__icon {
+    width: pxToRem(46);
+    height: pxToRem(46);
+    background-color: #e9eaf6;
+    color: $color-primary;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius;
+    border: none;
+    transition: 0.2s ease;
+
+    &:hover {
+      color: $color-secondary;
+    }
+
+    &-svg {
+      fill: currentColor;
+      width: pxToRem(24);
+      height: pxToRem(24);
+    }
+  }
+
+  &__content {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    top: 0;
+    background-color: #e9eaf6;
+    padding: pxToRem(16);
+    padding-top: pxToRem(50);
+    border-radius: $border-radius;
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0);
+    transform-origin: top center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
+    @media (min-width: $screen-sm) {
+      left: auto;
+      right: 0;
+      transform-origin: top right;
+      padding-top: pxToRem(16);
+      padding-right: pxToRem(50);
+      min-width: 300px;
+    }
+
+    &--active {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+
+      .info__content-inner {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &-inner {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease 0.3s, visibility 0.3s ease 0.3s;
+    }
+  }
+
+  &__text {
+    color: $color-secondary;
+    font-size: pxToRem(13);
+    margin: 0;
+
+    &:not(:last-child) {
+      margin: 0 0 pxToRem(10);
+    }
+  }
+}
